@@ -42,3 +42,10 @@
         }
     }
 </style>
+
+<div class="projects">
+    {#each projects as p}
+       <Project data={p} hLevel={hLevel} />
+    {/each}
+ </div>
+ 
