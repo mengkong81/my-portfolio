@@ -10,10 +10,7 @@ export default {
       fallback: null
     }),
     paths: {
-      base: dev ? '' : '/my-portfolio',  // Update with your repo name
-    },
-    prerender: {
-      default: true
+      base: dev ? '' : '/my-portfolio',  // Update this to your repository name
     }
   }
 };
