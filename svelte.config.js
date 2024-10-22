@@ -10,7 +10,10 @@ export default {
       fallback: null
     }),
     paths: {
-      base: dev ? '' : 'mengkong81/my-portfolio',  // Replace with your repo name
+      base: dev ? '' : '/my-portfolio',  // Update with your repo name
+    },
+    prerender: {
+      default: true
     }
   }
 };
