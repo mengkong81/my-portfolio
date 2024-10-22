@@ -1,3 +1,9 @@
+<script>
+    import Project from '$lib/Project.svelte';
+    import projects from '$lib/projects.json';
+</script>
+
+
 <h1>Mengkong Aun</h1>
 
 <!-- Adding the profile picture -->
@@ -15,6 +21,27 @@
     <p><a href="https://www.linkedin.com/in/mengkongaun/" target="_blank">LinkedIn Profile</a> | 
        <a href="https://github.com/mengkong81" target="_blank">GitHub Projects</a></p>
 </section>
+
+<h2>Latest Projects</h2>
+
+<div class="projects highlights">
+    {#each projects.slice(0, 3) as p}
+        <Project data={p} hLevel={3} />
+    {/each}
+</div>
+
+<style>
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5em;
+    }
+
+    .highlights {
+        background-color: #f0f8ff;  /* Light background for featured projects */
+    }
+</style>
+
 
 <!-- Summary Section -->
 <section>

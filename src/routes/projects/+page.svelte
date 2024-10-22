@@ -1,66 +1,67 @@
-<h1>Projects</h1>
-<p>Here is a showcase of my projects.</p>
-
-<!-- Projects grid container -->
-<div class="projects">
-    <article>
-        <h2>Lorem ipsum dolor sit.</h2>
-        <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nesciunt quaerat sapiente placeat esse soluta incidunt natus dolore vero praesentium dolorem dolores, provident animi fugit amet voluptatum consequuntur quod sint!</p>
-    </article>
-    <article>
-        <h2>Voluptates deleniti a suscipit.</h2>
-        <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-        <p>Eos reprehenderit vero obcaecati magni voluptas harum quasi rerum similique, repudiandae alias, iure modi expedita hic officia labore sequi qui maxime natus ipsum ea. Tempora, voluptates odio. Unde, quae aut.</p>
-    </article>
-    <article>
-        <h2>Nulla dolorum iste quos.</h2>
-        <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-        <p>Impedit dolores obcaecati, necessitatibus, atque, repudiandae voluptatum doloribus dicta amet voluptatem distinctio inventore ut! Aperiam doloremque obcaecati nemo, dignissimos recusandae laborum aliquam nobis, similique adipisci perferendis hic provident facilis laudantium?</p>
-    </article>
-    <article>
-        <h2>Unde, cum dolorum? Velit?</h2>
-        <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-        <p>Nostrum ipsa excepturi quas, suscipit nihil culpa, modi deserunt tenetur earum debitis error veritatis doloremque ullam sunt ea assumenda, fugiat soluta possimus. Nihil harum necessitatibus deserunt quia, sit reiciendis saepe?</p>
-    </article>
-    <article>
-        <h2>Asperiores voluptatem corrupti ipsam!</h2>
-        <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-        <p>Eligendi, tempore deleniti maxime ratione eveniet libero id eaque recusandae cumque quidem, distinctio non facilis reiciendis est, esse error ipsam veniam ducimus ut provident quis possimus quae. Explicabo, aliquid maxime!</p>
-    </article>
-    <article>
-        <h2>Quis voluptatibus officiis magni?</h2>
-        <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-        <p>Deleniti, excepturi eos doloremque quod beatae magnam obcaecati vel porro alias molestiae voluptates id dolorum cumque fugit nostrum sit eaque enim praesentium libero earum doloribus mollitia. Nulla eveniet corrupti quidem?</p>
-    </article>
-    <article>
-        <h2>Eaque explicabo cupiditate fugit!</h2>
-        <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-        <p>Voluptas neque incidunt accusantium ducimus recusandae, obcaecati necessitatibus, cum autem nobis, saepe consectetur beatae? Quisquam itaque tempora quibusdam doloribus aliquid quis minus nesciunt sunt veniam eos, consequuntur eum corrupti facere.</p>
-    </article>
-    <article>
-        <h2>Vitae blanditiis id a!</h2>
-        <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-        <p>Nulla vel architecto at optio eligendi libero saepe, illo id temporibus animi et vitae assumenda non commodi quasi facere laborum debitis vero modi dignissimos neque officia placeat? Officia, voluptates a.</p>
-    </article>
-    <article>
-        <h2>Ex odio ipsum pariatur.</h2>
-        <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-        <p>Non pariatur deserunt neque excepturi aperiam. Nulla tenetur odio eveniet possimus et saepe nemo vitae, eos, ea aspernatur ipsa aperiam perspiciatis? Aperiam nesciunt harum unde incidunt ab recusandae accusamus? Explicabo.</p>
-    </article>
-    <article>
-        <h2>Ipsa alias sequi eveniet?</h2>
-        <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-        <p>Explicabo nostrum impedit voluptatibus dicta, dolor error omnis excepturi eos et. Perferendis iure explicabo eligendi ratione, provident repellat similique expedita accusamus quo necessitatibus earum inventore! Maiores distinctio rerum temporibus iure?</p>
-    </article>
-    <article>
-        <h2>Provident dolore expedita aspernatur.</h2>
-        <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-        <p>Asperiores, deleniti dicta? Deleniti et unde asperiores reiciendis consequuntur veritatis repudiandae esse aliquam. Delectus eligendi itaque quia, hic nemo cumque deleniti impedit ipsa consequatur ipsam praesentium possimus quis quaerat nihil!</p>
-    </article>
-    <article>
-        <h2>Praesentium eaque est ad.</h2>
-        <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-        <p>Facilis quis, animi ea optio earum nam, ex beatae saepe, aut quia eligendi alias labore est totam laudantium nostrum ipsa illum nobis rerum accusantium nulla. Necessitatibus debitis aliquam voluptates suscipit.</p>
-    </article>
-</div> <!-- This closing div was missing -->
+<script>
+    import Project from '$lib/Project.svelte';
+    import projects from '$lib/projects.json';
+</script>
+  
+  <h1>{projects.length} Projects</h1>
+  <p>Here is a showcase of my projects.</p>
+  
+  <!-- Projects grid container -->
+  <div class="projects">
+      {#each projects as p}
+        <article>
+            <h2>{p.title}</h2>
+            <img src={p.image} alt="Project image for {p.title}">
+            <p>{p.description}</p>
+        </article>
+      {/each}
+  </div>
+  
+  <style>
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+      gap: 1.5em;
+    }
+  
+    article {
+      border: 1px solid #ddd;
+      padding: 1em;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+  
+    article img {
+      width: 100px;
+      height: 100px;
+      margin: 0.5em 0;
+    }
+  
+    article h2 {
+      margin: 0.5em 0;
+    }
+  
+    article p {
+      font-size: 0.9em;
+      color: #666;
+    }
+  
+    /* Dark theme styles */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+        color: #E0E0E0;
+      }
+  
+      article {
+        background-color: #222;
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+  
+      article p {
+        color: #ccc;
+      }
+    }
+  </style>
+  
