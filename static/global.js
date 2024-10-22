@@ -18,7 +18,6 @@ document.body.insertAdjacentHTML(
     </label>
   `
 );
-
 const select = document.querySelector("#color-scheme-selector");
 
 // Function to set the color scheme

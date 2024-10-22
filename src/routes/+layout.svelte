@@ -39,6 +39,7 @@
     a:hover {
         background-color: #ddd;
     }
+    
     .current {
         font-weight: bold;
         color: lightseagreen;

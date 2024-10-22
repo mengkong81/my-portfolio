@@ -3,7 +3,6 @@
     import projects from '$lib/projects.json';
 </script>
 
-
 <h1>Mengkong Aun</h1>
 
 <!-- Adding the profile picture -->
@@ -41,7 +40,6 @@
         background-color: #f0f8ff;  /* Light background for featured projects */
     }
 </style>
-
 
 <!-- Summary Section -->
 <section>
